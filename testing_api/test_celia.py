@@ -14,7 +14,7 @@ def header():
 def id_room(header):
     return requests.get(BASE_URL+'/v1/rooms', headers=header).json()[0]['id']
 
-
+@pytest.mark.status_code
 def test_user_header(header):
     response = requests.get(BASE_URL+'/v1/user', headers=header)
     assert response.status_code==200
