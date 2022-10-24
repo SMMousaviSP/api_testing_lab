@@ -12,11 +12,9 @@ def header():
 def id_room(header):
     return requests.get(BASE_URL+'/v1/rooms', headers=header).json()[0]['id']
 
-
 @pytest.fixture
 def id_personal_room(header):
     return requests.get(BASE_URL+'/v1/rooms', headers=header).json()[1]['id']
-
 
 
 @pytest.fixture
